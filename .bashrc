@@ -1,0 +1,37 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/slarty/develop/skripty_bash:/var/lib/snapd/snap/bin:/home/slarty/.local/bin:/home/slarty/bin:/home/slarty/Dokumenty/penTesting/skripty
+
+#PS1='[\u@\h \W]\$'
+export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+#Command line editor
+set -o vi
+bind -m vi-insert "\C-l":clear-screen # crtl+L to clear screan
+bind '"\e."':yank-last-arg # acces last argument with dot
+
+# User specific aliases and functions
+alias rm='rm -i'
+alias gxx='g++ -Wall -pedantic -Wextra --std=c++11 -o 'run.out''
+alias gsanitize='g++ -Wall -pedantic -Wextra --std=c++11 -fsanitize=address -lasan -o 'sanitized.out''
+alias ll='ls -lh --color=auto'
+alias la='ls -lah --color=auto'
+alias pxx='/usr/bin/python3.6'
+alias unetbootinx='xhost local:root ; sudo QT_X11_NO_MITSHM=1 unetbootin'
+alias clipboard='xclip -sel clip'
+
+#GIT configuration
+source ~/.git_prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto verbose"
+
