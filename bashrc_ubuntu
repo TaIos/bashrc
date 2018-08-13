@@ -135,6 +135,7 @@ alias la='ls -lah --color=auto'
 alias pxx='/usr/bin/python3.6'
 alias unetbootinx='xhost local:root ; sudo QT_X11_NO_MITSHM=1 unetbootin'
 alias clipboard='xclip -sel clip'
+alias grep='grep -E'
 
 ################################################################################
 #GIT configuration
