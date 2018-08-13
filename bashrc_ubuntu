@@ -116,6 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+################################################################################
+
+#PATH
+PATH=$PATH:/home/slarty/develop/skripty_bash:/home/slarty/Dokumenty/penTesting/skripty
+
 #Command line editor
 set -o vi
 bind -m vi-insert "\C-l":clear-screen # crtl+L to clear screan
