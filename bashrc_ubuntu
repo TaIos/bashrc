@@ -119,7 +119,7 @@ fi
 ################################################################################
 
 #PATH
-PATH=$PATH:/home/slarty/develop/skripty_bash:/home/slarty/Dokumenty/penTesting/skripty
+export PATH=$PATH:/home/slarty/develop/skripty_bash:/home/slarty/Dokumenty/penTesting/skripty
 
 #Command line editor
 set -o vi

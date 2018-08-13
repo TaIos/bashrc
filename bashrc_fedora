@@ -8,7 +8,7 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/slarty/develop/skripty_bash:/var/lib/snapd/snap/bin:/home/slarty/.local/bin:/home/slarty/bin:/home/slarty/Dokumenty/penTesting/skripty
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/slarty/develop/skripty_bash:/var/lib/snapd/snap/bin:/home/slarty/.local/bin:/home/slarty/bin:/home/slarty/Dokumenty/penTesting/skripty
 
 #PS1='[\u@\h \W]\$'
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
