@@ -1,0 +1,61 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+################################################################################
+
+#PATH
+export PATH=$PATH:/home/slarty/develop/skripty_bash:/home/slarty/Dokumenty/penTesting/skripty
+
+#Command line editor
+set -o vi
+bind -m vi-insert "\C-l":clear-screen # crtl+L to clear screan
+bind '"\e."':yank-last-arg # acces last argument with dot
+
+# User specific aliases and functions
+alias rm='rm -i'
+alias gxx='g++ -Wall -pedantic -Wextra --std=c++11 -o 'run.out''
+alias gsanitize='g++ -Wall -pedantic -Wextra --std=c++11 -fsanitize=address -lasan -o 'sanitized.out''
+alias ll='ls -lh --color=auto'
+alias la='ls -lah --color=auto'
+alias pxx='/usr/bin/python3.6'
+alias unetbootinx='xhost local:root ; sudo QT_X11_NO_MITSHM=1 unetbootin'
+alias clipboard='xclip -sel clip'
+alias grep='grep -E'
+
+################################################################################
+#GIT configuration
+
+RED="\033[0;31m"
+YELLOW="\033[0;33m"
+GREEN="\033[0;32m"
+OCHRE="\033[38;5;95m"
+BLUE="\033[0;34m"
+WHITE="\033[0;37m"
+RESET="\033[0m"
+
+# returns current git branch, empty string if none
+function git_branch {
+  local git_status="$(git status 2> /dev/null)"
+  local on_branch="On branch ([^${IFS}]*)"
+  local on_commit="HEAD detached at ([^${IFS}]*)"
+
+  if [[ $git_status =~ $on_branch ]]; then
+    local branch=${BASH_REMATCH[1]}
+    echo "($branch)"
+  elif [[ $git_status =~ $on_commit ]]; then
+    local commit=${BASH_REMATCH[1]}
+    echo "($commit)"
+  fi
+}
+
+PS1+="\[$RED\]\$(git_branch)\[$WHITE\]"		# prints current branch in colors
+PS1+="$ "
+export PS1
+################################################################################
