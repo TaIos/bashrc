@@ -1,4 +1,4 @@
-#
+#ARCH_LINUX_AUTOGENERATE
 # ~/.bashrc
 #
 
@@ -9,6 +9,7 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W] '
 
 ################################################################################
+# BASH_SETTING
 
 #PATH
 export PATH=$PATH:/home/slarty/develop/skripty_bash:/home/slarty/Dokumenty/penTesting/skripty
@@ -58,4 +59,11 @@ function git_branch {
 PS1+="\[$RED\]\$(git_branch)\[$WHITE\]"		# prints current branch in colors
 PS1+="$ "
 export PS1
+
 ################################################################################
+#ARCH_LINUX_SPECIFIC
+
+# the script checks if you are running either bash or zsh and exits if you are not
+#		-> solves problem when opening new tab in terminal you end up in home directory
+#		-> now you end up in the same directory from which you opened the new tab	
+. /etc/profile.d/vte.sh
