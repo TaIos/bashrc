@@ -26,7 +26,7 @@ alias gsanitize='g++ -Wall -pedantic -Wextra --std=c++11 -fsanitize=address -las
 alias ll='ls -lh --color=auto'
 alias la='ls -lah --color=auto'
 alias pxx='/usr/bin/python3.7'
-alias unetbootinx='xhost local:root ; sudo QT_X11_NO_MITSHM=1 unetbootin'
+alias unetbootinx='xhost local:root ; sudo QT_X11_NO_MITSHM=1 /home/slarty/apps/unetbootin/unetbootin'
 alias clipboard='xclip -sel clip'
 alias grep='grep -E'
 
