@@ -73,6 +73,8 @@ function backup() {
 ################################################################################
 #ARCH_LINUX_SPECIFIC
 
+alias pkglist="expac --timefmt='%F %T' '%l %n' | sort -n"
+
 # the script checks if you are running either bash or zsh and exits if you are not
 #		-> solves problem when opening new tab in terminal you end up in home directory
 #		-> now you end up in the same directory from which you opened the new tab	
