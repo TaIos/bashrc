@@ -21,6 +21,7 @@ PS1='[\u@\h \W] '
 export PATH=$PATH:/home/slarty/develop/skripty_bash:/home/slarty/Dokumenty/penTesting/skripty
 
 #Command line editor
+export EDITOR="/usr/bin/vim"
 set -o vi
 bind -m vi-insert "\C-l":clear-screen # crtl+L to clear screan
 bind '"\e."':yank-last-arg # acces last argument with dot
