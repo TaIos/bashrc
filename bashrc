@@ -7,7 +7,6 @@ fi
 
 ################################################################################
 # BASH_SETTING
-export EDITOR="/bin/vim"
 
 #PATH
 export PATH=$PATH:/home/slarty/develop/skripty_bash:/home/slarty/Dokumenty/penTesting/skripty

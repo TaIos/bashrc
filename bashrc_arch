@@ -21,7 +21,6 @@ PS1='[\u@\h \W] '
 export PATH=$PATH:/home/slarty/develop/skripty_bash:/home/slarty/Dokumenty/penTesting/skripty
 
 #Command line editor
-export EDITOR="/usr/bin/vim"
 set -o vi
 bind -m vi-insert "\C-l":clear-screen # crtl+L to clear screan
 bind '"\e."':yank-last-arg # acces last argument with dot
@@ -89,3 +88,19 @@ function backup() {
 
 ################################################################################
 
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/slarty/apps/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/home/slarty/apps/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/slarty/apps/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/slarty/apps/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
